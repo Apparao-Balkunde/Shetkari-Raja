@@ -237,5 +237,6 @@ def get_nearby_services():
     except Exception as e:
         return jsonify({"status": "error", "message": str(e)}), 500
 
+from app import app
 if __name__ == '__main__':
     app.run(debug=True)
