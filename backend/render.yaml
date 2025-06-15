@@ -8,7 +8,6 @@ services:
       pip install -r requirements.txt
     startCommand:
       gunicorn /opt/render/project/src/app:app
-      gunicorn --worker-tmp-dir /dev/shm --timeout 120 --workers 4 wsgi:app
     envVars:
       - key: PYTHONPATH
         value: /opt/render/project/src
