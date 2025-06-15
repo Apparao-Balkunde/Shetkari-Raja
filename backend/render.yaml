@@ -1,14 +1,13 @@
 services:
   - type: web
-    name: shetkari-raja
+    name: your-app-name
     env: python
     pythonVersion: "3.8.10"  # Must match your local version
     buildCommand: |
       pip install --upgrade pip &&
       pip install -r requirements.txt
-    startCommand:
-      gunicorn /opt/render/project/src/app wsgi:app
+    startCommand: |
+      gunicorn --worker-tmp-dir /dev/shm --timeout 120 app:app
     envVars:
       - key: PYTHONPATH
         value: /opt/render/project/src
-    healthCheckPath: /api/weather/pune  # Test with an existing endpoint
