@@ -1,9 +1,8 @@
-# render.yaml - Production-ready configuration
 services:
   - type: web
-    name: shetkari-raja-backend
+    name: shetkari-raja
     env: python
-    pythonVersion: "3.8.10"  # Matches your local version
+    pythonVersion: "3.8.10"  # Must match your local version
     buildCommand: |
       pip install --upgrade pip &&
       pip install -r requirements.txt
@@ -12,10 +11,4 @@ services:
     envVars:
       - key: PYTHONPATH
         value: /opt/render/project/src
-    healthCheckPath: /health-check  # Add a simple route in your Flask app
-    autoDeploy: yes
-
-# Advanced caching (uncomment if needed)
-#cache:
-#  paths:
-#    - /opt/render/project/src/.venv
+    healthCheckPath: /api/weather/pune  # Test with an existing endpoint
