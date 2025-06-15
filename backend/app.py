@@ -1,5 +1,3 @@
-import sys
-print("Python Path:", sys.path)  # Check module search paths
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 import requests
@@ -246,3 +244,6 @@ def get_nearby_services():
     
     if __name__ == '__main__':
         app.run(host='0.0.0.0', port=10000)
+        
+import sys
+print("Python Path:", sys.path)        
