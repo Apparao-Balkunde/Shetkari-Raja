@@ -1,3 +1,5 @@
+import sys
+print("Python Path:", sys.path)  # Check module search paths
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 import requests
