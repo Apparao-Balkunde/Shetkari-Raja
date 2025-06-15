@@ -6,7 +6,8 @@ services:
     buildCommand: |
       pip install --upgrade pip &&
       pip install -r requirements.txt
-    startCommand: |
+    startCommand:
+      gunicorn /opt/render/project/src/app:app
       gunicorn --worker-tmp-dir /dev/shm --timeout 120 --workers 4 wsgi:app
     envVars:
       - key: PYTHONPATH
