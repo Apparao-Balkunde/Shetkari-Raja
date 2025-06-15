@@ -1,3 +1,6 @@
+import sys
+print(sys.path)  # Check Python module paths
+from app import app
 from flask import Flask, jsonify, request
 import requests
 import os
